@@ -1,0 +1,13 @@
+import re
+
+password = input("Enter your password: ")
+
+min_length = len(password) >= 8
+has_number = re.search(r"\d", password)
+has_upper = re.search(r"[A-Z]", password)
+has_special = re.search(r"[!@#$%^&*(),.?\":{}|<>]", password)
+
+if min_length and has_number and has_upper and has_special:
+    print("Strong Password")
+else:
+    print("Weak Password")
